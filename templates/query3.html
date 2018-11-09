@@ -1,0 +1,26 @@
+{% extends 'base1.html' %}
+{% load staticfiles %}
+{% block banner_block %}
+
+{% endblock %}
+{% block content_block %}
+    <div class="content">
+    <div class="container">
+        <div class="content-top">
+            <form method="post">
+                {% csrf_token %}
+            输入参数x(0~100)<input name="x">
+            <input type="submit" />
+    </select>
+
+</form>
+
+            <div class="content-top1">
+
+            <div class="clearfix"> </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+{% endblock %}

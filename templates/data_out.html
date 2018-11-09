@@ -1,0 +1,34 @@
+{% extends 'base1.html' %}
+{% load staticfiles %}
+{% block banner_block %}
+
+{% endblock %}
+{% block content_block %}
+    <div class="content">
+    <div class="container">
+        <div class="content-top">
+            <form method="post">
+                {% csrf_token %}
+        <select name="table">
+    <option value="none">--选择要导出的表--</option>
+    <option value=1>1.网络配置信息导入</option>
+    <option value=2>2.KPI指标信息导入注册</option>
+    <option value=3>3.PRB干扰信息导入</option>
+    <option value=4>4.MRO数据导入</option>
+    </select>
+    <input type="text" name="path" value="请手动输入导出的路径">
+    <input type="submit"/>
+
+</form>
+
+            <div class="content-top1">
+
+            <div class="clearfix"> </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+{% endblock %}
+

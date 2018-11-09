@@ -1,0 +1,24 @@
+{% extends 'base1.html' %}
+{% load staticfiles %}
+
+{% block content_block %}
+    <div class="content">
+    <div class="content">
+    <div class="container">
+        <div class="content-top">
+            {% for i in list4 %}
+            <a>{{ i.x}}:</a>
+            <a>{{i.y}}</a>
+                 <br>
+            {% endfor %}
+            <a>此处应有统计图，但是不会做</a>
+            <div class="content-top1">
+
+            <div class="clearfix"> </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>>
+{% endblock %}

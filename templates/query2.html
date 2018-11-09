@@ -1,0 +1,483 @@
+{% extends 'base1.html' %}
+{% load staticfiles %}
+{% block banner_block %}
+
+{% endblock %}
+{% block content_block %}
+    <div class="content">
+    <div class="container">
+        <div class="content-top">
+            <form method="post">
+                {% csrf_token %}
+        <select name="name">
+        <option value="none">--请选择--</option>
+            {% for name in fina_list %}
+                <option value={{ name }}>{{ name }}</option>
+            {% endfor %}
+            <input type="submit" />
+    </select>
+
+</form>
+
+            <div class="content-top1">
+
+            <div class="clearfix"> </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+
+            {% if list3 %}
+               {% for fina_list in list3 %}
+                <table width="200" border="1">
+
+  <caption>
+  </caption>
+  <tr>
+    <td>起始时间</td>
+    <td>{{ fina_list.START_TIME }}</td>
+  </tr>
+  <tr>
+    <td>周期</td>
+    <td>{{  fina_list.T}}</td>
+  </tr>
+  <tr>
+    <td>网元名称</td>
+    <td>{{  fina_list.NET_ELE}}</td>
+  </tr>
+  <tr>
+    <td>小区</td>
+    <td>{{ fina_list.SECTOR_NAME }}</td>
+  </tr>
+  <tr>
+    <td>RRC连接建立完成次数</td>
+    <td>{{ fina_list.RRC_BUILD }}</td>
+  </tr>
+                <tr>
+    <td>RRC连接请求次数</td>
+    <td>{{ fina_list.RRC_REQUEST }}</td>
+  </tr>
+                <tr>
+    <td>RRC建立成功率</td>
+    <td>{{ fina_list.RRC_RATE }}</td>
+  </tr>
+                <tr>
+    <td>E-RAB建立成功总次数</td>
+    <td>{{  fina_list.RAB_SUCCESS }}</td>
+  </tr>
+                <tr>
+    <td>E-RAB建立尝试总次数</td>
+    <td>{{ fina_list.RAB_TRY }}</td>
+  </tr>
+                <tr>
+    <td>E-RAB建立成功率</td>
+    <td>{{ fina_list.RAB_RATE }}</td>
+  </tr>
+                <tr>
+    <td>eNodeB触发的E-RAB异常释放总次数</td>
+    <td>{{ fina_list.eNodeB_TIME }}</td>
+  </tr>
+                <tr>
+    <td>小区切换出E-RAB异常释放总次数</td>
+    <td>{{  fina_list.SECTOR_TIME}}</td>
+  </tr>
+                <tr>
+    <td>E-RAB掉线率</td>
+    <td>{{  fina_list.RAB_DROP_RATE}}</td>
+  </tr>
+                <tr>
+    <td>eNodeB发起的S1 RESET导致的UE Context释放次数</td>
+    <td>{{  fina_list.RESET_TIME}}</td>
+  </tr>
+                <tr>
+    <td>UE Context异常释放次数</td>
+    <td>{{  fina_list.ABNORMAL_TIME}}</td>
+  </tr>
+                <tr>
+    <td>UE Context建立成功总次数</td>
+    <td>{{ fina_list.SUCCESS_TIME }}</td>
+  </tr>
+                <tr>
+    <td>无线掉线率</td>
+    <td>{{  fina_list.WIRELESS_DROP_RATE}}</td>
+  </tr>
+                <tr>
+    <td>eNodeB内异频切换出成功次数</td>
+    <td>{{  fina_list.eNodeB_IN_DIF_SUCCESS}}</td>
+  </tr>
+                <tr>
+    <td>eNodeB内异频切换出尝试次数</td>
+    <td>{{fina_list.eNodeB_IN_DIF_TRY  }}</td>
+  </tr>
+                 <tr>
+    <td>eNodeB内同频切换出成功次数</td>
+    <td>{{fina_list.eNodeB_IN_SIM_SUCCESS  }}</td>
+  </tr>
+                  <tr>
+    <td>eNodeB内同频切换出尝试次数</td>
+    <td>{{fina_list.eNodeB_IN_SIM_TRY  }}</td>
+  </tr>
+                  <tr>
+    <td>eNodeB间异频切换出成功次数</td>
+    <td>{{fina_list.eNodeB_OUT_DIF_SUCCESS  }}</td>
+  </tr>
+                  <tr>
+    <td>eNodeB间异频切换出尝试次数</td>
+    <td>{{fina_list.eNodeB_OUT_DIF_TRY  }}</td>
+  </tr>
+                  <tr>
+    <td>eNodeB间同频切换出成功次数</td>
+    <td>{{fina_list.eNodeB_OUT_SIM_SUCCESS  }}</td>
+  </tr>
+                  <tr>
+    <td>eNodeB间同频切换出尝试次数</td>
+    <td>{{fina_list.eNodeB_OUT_SIM_TRY  }}</td>
+  </tr>
+                  <tr>
+    <td>eNB内切换成功率</td>
+    <td>{{fina_list.eNodeB_IN_RATE  }}</td>
+  </tr>
+                  <tr>
+    <td>eNB间切换成功率</td>
+    <td>{{fina_list.eNodeB_OUT_RATE  }}</td>
+  </tr>
+                  <tr>
+    <td>同频切换成功率</td>
+    <td>{{fina_list.SIM_RATE  }}</td>
+  </tr>
+                  <tr>
+    <td>异频切换成功率</td>
+    <td>{{fina_list.DIF_RATE  }}</td>
+  </tr>
+                  <tr>
+    <td>切换成功率</td>
+    <td>{{fina_list.TOTAL_SUCCESS_RATE  }}</td>
+  </tr>
+                  <tr>
+    <td>小区PDCP层所接收到的上行数据的总吞吐量</td>
+    <td>{{fina_list.UP_BIT  }}</td>
+  </tr>
+
+                <tr>
+    <td>小区PDCP层所接收到的下行数据的总吞吐量</td>
+    <td>{{fina_list.DOWN_BIT  }}</td>
+  </tr>
+                <tr>
+    <td>RRC重建请求次数</td>
+    <td>{{fina_list.RRC_REBUILD_REQUEST  }}</td>
+  </tr><tr>
+    <td>RRC连接重建比率</td>
+    <td>{{fina_list.RRC_REBUILD_RATE  }}</td>
+  </tr>
+                <tr>
+    <td>通过重建回源小区的eNodeB间同频切换出执行成功次数</td>
+    <td>{{fina_list.REBUILD_SIM_IN_TIME  }}</td>
+  </tr>
+                <tr>
+    <td>通过重建回源小区的eNodeB间异频切换出执行成功次数</td>
+    <td>{{fina_list.REBUILD_DIF_IN_TIME  }}</td>
+  </tr>
+                <tr>
+    <td>通过重建回源小区的eNodeB间异频切换出执行成功次数</td>
+    <td>{{fina_list.REBUILD_SIM_OUT_TIME }}</td>
+  </tr>
+                <tr>
+    <td>通过重建回源小区的eNodeB内同频切换出执行成功次数</td>
+    <td>{{fina_list.REBUILD_DIF_OUT_TIME  }}</td>
+  </tr>
+                <tr>
+    <td>eNB内切换出成功次数</td>
+    <td>{{fina_list.eNB_REQUEST_TIME  }}</td>
+  </tr>
+                <tr>
+    <td>eNB内切换出请求次数</td>
+    <td>{{fina_list.eNB_TRY_TIME }}</td>
+  </tr>
+</table>
+                {% endfor %}
+            {% endif %}
+
+
+
+    {% if list3 %}
+        <form method="post">
+                {% csrf_token %}
+        <select name="data">
+        <option value="none">--请选择要查询的数据项--</option>
+                <option value=RRC_BUILD>RRC连接建立完成次数</option>
+                <option value=RRC_REQUEST>RRC连接请求次数</option>
+                <option value=RRC_RATE >RRC建立成功率</option>
+                <option value=RAB_SUCCESS>E-RAB建立成功总次数</option>
+                <option value= RAB_TRY >  E-RAB建立尝试总次数</option>
+                <option value= RAB_RATE >E-RAB建立成功率</option>
+                <option value= eNodeB_TIME >eNodeB触发的E-RAB异常释放总次数</option>
+                <option value= SECTOR_TIME >小区切换出E-RAB异常释放总次数</option>
+                <option value=RAB_DROP_RATE >E-RAB掉线率</option>
+                <option value=CONN_RATE >无线接通率</option>
+                <option value= RESET_TIME >eNodeB发起的S1 RESET导致的UE Context释放次数</option>
+                <option value= ABNORMAL_TIME >UE Context异常释放次数</option>
+                <option value=SUCCESS_TIME >UE Context建立成功总次数</option>
+                <option value= WIRELESS_DROP_RATE >无线掉线率</option>
+                <option value= eNodeB_IN_DIF_SUCCESS >eNodeB内异频切换出成功次数</option>
+                <option value=eNodeB_IN_DIF_TRY >eNodeB内异频切换出尝试次数</option>
+                <option value= eNodeB_IN_SIM_SUCCESS >eNodeB内同频切换出成功次数</option>
+                <option value= eNodeB_IN_SIM_TRY >eNodeB内同频切换出尝试次数</option>
+                <option value= eNodeB_OUT_DIF_SUCCESS >eNodeB间异频切换出成功次数</option>
+                <option value= eNodeB_OUT_DIF_TRY>eNodeB间异频切换出尝试次数</option>
+                <option value= eNodeB_OUT_SIM_SUCCESS >eNodeB间同频切换出成功次数</option>
+                <option value= eNodeB_OUT_SIM_TRY >eNodeB间同频切换出尝试次数</option>
+                <option value= eNodeB_IN_RATE >eNB内切换成功率</option>
+                <option value= eNodeB_OUT_RATE >eNB间切换成功率</option>
+                <option value= SIM_RATE >同频切换成功率</option>
+                <option value= DIF_RATE >异频切换成功率</option>
+                <option value= TOTAL_SUCCESS_RATE >切换成功率</option>
+                <option value= UP_BIT >小区PDCP层所接收到的上行数据的总吞吐量</option>
+                <option value= DOWN_BIT >小区PDCP层所发送的下行数据的总吞吐量</option>
+                <option value= RRC_REBUILD_REQUEST >RRC重建请求次数</option>
+                <option value= RRC_REBUILD_RATE >RRC连接重建比率 </option>
+                <option value= REBUILD_SIM_IN_TIME >通过重建回源小区的eNodeB间同频切换出执行成功次数</option>
+                <option value= REBUILD_DIF_IN_TIME >通过重建回源小区的eNodeB间异频切换出执行成功次数</option>
+                <option value= REBUILD_SIM_OUT_TIME >通过重建回源小区的eNodeB内同频切换出执行成功次数</option>
+                <option value= REBUILD_DIF_OUT_TIME >通过重建回源小区的eNodeB内异频切换出执行成功次数</option>
+                <option value= eNB_REQUEST_TIME >eNB内切换出成功次数</option>
+                <option value= eNB_TRY_TIME >eNB内切换出请求次数</option>
+            </select>
+            <input type="date" name="start">
+            查询的时间段<input type="date" name="end">
+            <input type="hidden" name="name2" value={{ name2 }} ><!--隐藏输入，记录上一步操作的网元名--><input type="hidden" name="name" value=1 >
+            <input type="submit" />
+
+
+</form>
+
+    {% endif %}
+
+
+
+{% if list5 %}
+{% for fina_list in list5 %}
+<table width="200" border="1">
+<tr><td>PRB0</td><td>{{ fina_list.PRB0 }}</td></tr>
+<tr><td>PRB1</td><td>{{ fina_list.PRB1 }}</td></tr>
+<tr><td>PRB2</td><td>{{ fina_list.PRB2 }}</td></tr>
+<tr><td>PRB3</td><td>{{ fina_list.PRB3 }}</td></tr>
+<tr><td>PRB4</td><td>{{ fina_list.PRB4 }}</td></tr>
+<tr><td>PRB5</td><td>{{ fina_list.PRB5 }}</td></tr>
+<tr><td>PRB6</td><td>{{ fina_list.PRB6 }}</td></tr>
+<tr><td>PRB7</td><td>{{ fina_list.PRB7 }}</td></tr>
+<tr><td>PRB8</td><td>{{ fina_list.PRB8 }}</td></tr>
+<tr><td>PRB9</td><td>{{ fina_list.PRB9 }}</td></tr>
+<tr><td>PRB10</td><td>{{ fina_list.PRB10 }}</td></tr>
+<tr><td>PRB11</td><td>{{ fina_list.PRB11 }}</td></tr>
+<tr><td>PRB12</td><td>{{ fina_list.PRB12 }}</td></tr>
+<tr><td>PRB13</td><td>{{ fina_list.PRB13 }}</td></tr>
+<tr><td>PRB14</td><td>{{ fina_list.PRB14 }}</td></tr>
+<tr><td>PRB15</td><td>{{ fina_list.PRB15 }}</td></tr>
+<tr><td>PRB16</td><td>{{ fina_list.PRB16 }}</td></tr>
+<tr><td>PRB17</td><td>{{ fina_list.PRB17 }}</td></tr>
+<tr><td>PRB18</td><td>{{ fina_list.PRB18 }}</td></tr>
+<tr><td>PRB19</td><td>{{ fina_list.PRB19 }}</td></tr>
+<tr><td>PRB20</td><td>{{ fina_list.PRB20 }}</td></tr>
+<tr><td>PRB21</td><td>{{ fina_list.PRB21 }}</td></tr>
+<tr><td>PRB22</td><td>{{ fina_list.PRB22 }}</td></tr>
+<tr><td>PRB23</td><td>{{ fina_list.PRB23 }}</td></tr>
+<tr><td>PRB24</td><td>{{ fina_list.PRB24 }}</td></tr>
+<tr><td>PRB25</td><td>{{ fina_list.PRB25 }}</td></tr>
+<tr><td>PRB26</td><td>{{ fina_list.PRB26 }}</td></tr>
+<tr><td>PRB27</td><td>{{ fina_list.PRB27 }}</td></tr>
+<tr><td>PRB28</td><td>{{ fina_list.PRB28 }}</td></tr>
+<tr><td>PRB29</td><td>{{ fina_list.PRB29 }}</td></tr>
+<tr><td>PRB30</td><td>{{ fina_list.PRB30 }}</td></tr>
+<tr><td>PRB31</td><td>{{ fina_list.PRB31 }}</td></tr>
+<tr><td>PRB32</td><td>{{ fina_list.PRB32 }}</td></tr>
+<tr><td>PRB33</td><td>{{ fina_list.PRB33 }}</td></tr>
+<tr><td>PRB34</td><td>{{ fina_list.PRB34 }}</td></tr>
+<tr><td>PRB35</td><td>{{ fina_list.PRB35 }}</td></tr>
+<tr><td>PRB36</td><td>{{ fina_list.PRB36 }}</td></tr>
+<tr><td>PRB37</td><td>{{ fina_list.PRB37 }}</td></tr>
+<tr><td>PRB38</td><td>{{ fina_list.PRB38 }}</td></tr>
+<tr><td>PRB39</td><td>{{ fina_list.PRB39 }}</td></tr>
+<tr><td>PRB40</td><td>{{ fina_list.PRB40 }}</td></tr>
+<tr><td>PRB41</td><td>{{ fina_list.PRB41 }}</td></tr>
+<tr><td>PRB42</td><td>{{ fina_list.PRB42 }}</td></tr>
+<tr><td>PRB43</td><td>{{ fina_list.PRB43 }}</td></tr>
+<tr><td>PRB44</td><td>{{ fina_list.PRB44 }}</td></tr>
+<tr><td>PRB45</td><td>{{ fina_list.PRB45 }}</td></tr>
+<tr><td>PRB46</td><td>{{ fina_list.PRB46 }}</td></tr>
+<tr><td>PRB47</td><td>{{ fina_list.PRB47 }}</td></tr>
+<tr><td>PRB48</td><td>{{ fina_list.PRB48 }}</td></tr>
+<tr><td>PRB49</td><td>{{ fina_list.PRB49 }}</td></tr>
+<tr><td>PRB50</td><td>{{ fina_list.PRB50 }}</td></tr>
+<tr><td>PRB51</td><td>{{ fina_list.PRB51 }}</td></tr>
+<tr><td>PRB52</td><td>{{ fina_list.PRB52 }}</td></tr>
+<tr><td>PRB53</td><td>{{ fina_list.PRB53 }}</td></tr>
+<tr><td>PRB54</td><td>{{ fina_list.PRB54 }}</td></tr>
+<tr><td>PRB55</td><td>{{ fina_list.PRB55 }}</td></tr>
+<tr><td>PRB56</td><td>{{ fina_list.PRB56 }}</td></tr>
+<tr><td>PRB57</td><td>{{ fina_list.PRB57 }}</td></tr>
+<tr><td>PRB58</td><td>{{ fina_list.PRB58 }}</td></tr>
+<tr><td>PRB59</td><td>{{ fina_list.PRB59 }}</td></tr>
+<tr><td>PRB60</td><td>{{ fina_list.PRB60 }}</td></tr>
+<tr><td>PRB61</td><td>{{ fina_list.PRB61 }}</td></tr>
+<tr><td>PRB62</td><td>{{ fina_list.PRB62 }}</td></tr>
+<tr><td>PRB63</td><td>{{ fina_list.PRB63 }}</td></tr>
+<tr><td>PRB64</td><td>{{ fina_list.PRB64 }}</td></tr>
+<tr><td>PRB65</td><td>{{ fina_list.PRB65 }}</td></tr>
+<tr><td>PRB66</td><td>{{ fina_list.PRB66 }}</td></tr>
+<tr><td>PRB67</td><td>{{ fina_list.PRB67 }}</td></tr>
+<tr><td>PRB68</td><td>{{ fina_list.PRB68 }}</td></tr>
+<tr><td>PRB69</td><td>{{ fina_list.PRB69 }}</td></tr>
+<tr><td>PRB70</td><td>{{ fina_list.PRB70 }}</td></tr>
+<tr><td>PRB71</td><td>{{ fina_list.PRB71 }}</td></tr>
+<tr><td>PRB72</td><td>{{ fina_list.PRB72 }}</td></tr>
+<tr><td>PRB73</td><td>{{ fina_list.PRB73 }}</td></tr>
+<tr><td>PRB74</td><td>{{ fina_list.PRB74 }}</td></tr>
+<tr><td>PRB75</td><td>{{ fina_list.PRB75 }}</td></tr>
+<tr><td>PRB76</td><td>{{ fina_list.PRB76 }}</td></tr>
+<tr><td>PRB77</td><td>{{ fina_list.PRB77 }}</td></tr>
+<tr><td>PRB78</td><td>{{ fina_list.PRB78 }}</td></tr>
+<tr><td>PRB79</td><td>{{ fina_list.PRB79 }}</td></tr>
+<tr><td>PRB80</td><td>{{ fina_list.PRB80 }}</td></tr>
+<tr><td>PRB81</td><td>{{ fina_list.PRB81 }}</td></tr>
+<tr><td>PRB82</td><td>{{ fina_list.PRB82 }}</td></tr>
+<tr><td>PRB83</td><td>{{ fina_list.PRB83 }}</td></tr>
+<tr><td>PRB84</td><td>{{ fina_list.PRB84 }}</td></tr>
+<tr><td>PRB85</td><td>{{ fina_list.PRB85 }}</td></tr>
+<tr><td>PRB86</td><td>{{ fina_list.PRB86 }}</td></tr>
+<tr><td>PRB87</td><td>{{ fina_list.PRB87 }}</td></tr>
+<tr><td>PRB88</td><td>{{ fina_list.PRB88 }}</td></tr>
+<tr><td>PRB89</td><td>{{ fina_list.PRB89 }}</td></tr>
+<tr><td>PRB90</td><td>{{ fina_list.PRB90 }}</td></tr>
+<tr><td>PRB91</td><td>{{ fina_list.PRB91 }}</td></tr>
+<tr><td>PRB92</td><td>{{ fina_list.PRB92 }}</td></tr>
+<tr><td>PRB93</td><td>{{ fina_list.PRB93 }}</td></tr>
+<tr><td>PRB94</td><td>{{ fina_list.PRB94 }}</td></tr>
+<tr><td>PRB95</td><td>{{ fina_list.PRB95 }}</td></tr>
+<tr><td>PRB96</td><td>{{ fina_list.PRB96 }}</td></tr>
+<tr><td>PRB97</td><td>{{ fina_list.PRB97 }}</td></tr>
+<tr><td>PRB98</td><td>{{ fina_list.PRB98 }}</td></tr>
+<tr><td>PRB99</td><td>{{ fina_list.PRB99 }}</td></tr>
+</table>>
+{% endfor %}
+{% endif %}
+
+
+    {% if list5 %}
+    <form method="post">
+                {% csrf_token %}
+        <select name="data">
+            <option value="none">--请选择要查询的数据项--</option>
+<option value=PRB0>PRB0</option>
+<option value=PRB1>PRB1</option>
+<option value=PRB2>PRB2</option>
+<option value=PRB3>PRB3</option>
+<option value=PRB4>PRB4</option>
+<option value=PRB5>PRB5</option>
+<option value=PRB6>PRB6</option>
+<option value=PRB7>PRB7</option>
+<option value=PRB8>PRB8</option>
+<option value=PRB9>PRB9</option>
+<option value=PRB10>PRB10</option>
+<option value=PRB11>PRB11</option>
+<option value=PRB12>PRB12</option>
+<option value=PRB13>PRB13</option>
+<option value=PRB14>PRB14</option>
+<option value=PRB15>PRB15</option>
+<option value=PRB16>PRB16</option>
+<option value=PRB17>PRB17</option>
+<option value=PRB18>PRB18</option>
+<option value=PRB19>PRB19</option>
+<option value=PRB20>PRB20</option>
+<option value=PRB21>PRB21</option>
+<option value=PRB22>PRB22</option>
+<option value=PRB23>PRB23</option>
+<option value=PRB24>PRB24</option>
+<option value=PRB25>PRB25</option>
+<option value=PRB26>PRB26</option>
+<option value=PRB27>PRB27</option>
+<option value=PRB28>PRB28</option>
+<option value=PRB29>PRB29</option>
+<option value=PRB30>PRB30</option>
+<option value=PRB31>PRB31</option>
+<option value=PRB32>PRB32</option>
+<option value=PRB33>PRB33</option>
+<option value=PRB34>PRB34</option>
+<option value=PRB35>PRB35</option>
+<option value=PRB36>PRB36</option>
+<option value=PRB37>PRB37</option>
+<option value=PRB38>PRB38</option>
+<option value=PRB39>PRB39</option>
+<option value=PRB40>PRB40</option>
+<option value=PRB41>PRB41</option>
+<option value=PRB42>PRB42</option>
+<option value=PRB43>PRB43</option>
+<option value=PRB44>PRB44</option>
+<option value=PRB45>PRB45</option>
+<option value=PRB46>PRB46</option>
+<option value=PRB47>PRB47</option>
+<option value=PRB48>PRB48</option>
+<option value=PRB49>PRB49</option>
+<option value=PRB50>PRB50</option>
+<option value=PRB51>PRB51</option>
+<option value=PRB52>PRB52</option>
+<option value=PRB53>PRB53</option>
+<option value=PRB54>PRB54</option>
+<option value=PRB55>PRB55</option>
+<option value=PRB56>PRB56</option>
+<option value=PRB57>PRB57</option>
+<option value=PRB58>PRB58</option>
+<option value=PRB59>PRB59</option>
+<option value=PRB60>PRB60</option>
+<option value=PRB61>PRB61</option>
+<option value=PRB62>PRB62</option>
+<option value=PRB63>PRB63</option>
+<option value=PRB64>PRB64</option>
+<option value=PRB65>PRB65</option>
+<option value=PRB66>PRB66</option>
+<option value=PRB67>PRB67</option>
+<option value=PRB68>PRB68</option>
+<option value=PRB69>PRB69</option>
+<option value=PRB70>PRB70</option>
+<option value=PRB71>PRB71</option>
+<option value=PRB72>PRB72</option>
+<option value=PRB73>PRB73</option>
+<option value=PRB74>PRB74</option>
+<option value=PRB75>PRB75</option>
+<option value=PRB76>PRB76</option>
+<option value=PRB77>PRB77</option>
+<option value=PRB78>PRB78</option>
+<option value=PRB79>PRB79</option>
+<option value=PRB80>PRB80</option>
+<option value=PRB81>PRB81</option>
+<option value=PRB82>PRB82</option>
+<option value=PRB83>PRB83</option>
+<option value=PRB84>PRB84</option>
+<option value=PRB85>PRB85</option>
+<option value=PRB86>PRB86</option>
+<option value=PRB87>PRB87</option>
+<option value=PRB88>PRB88</option>
+<option value=PRB89>PRB89</option>
+<option value=PRB90>PRB90</option>
+<option value=PRB91>PRB91</option>
+<option value=PRB92>PRB92</option>
+<option value=PRB93>PRB93</option>
+<option value=PRB94>PRB94</option>
+<option value=PRB95>PRB95</option>
+<option value=PRB96>PRB96</option>
+<option value=PRB97>PRB97</option>
+<option value=PRB98>PRB98</option>
+<option value=PRB99>PRB99</option>
+
+
+        </select>
+
+            <input type="date" name="start">
+            查询的时间段<input type="date" name="end">
+            <input type="hidden" name="name2" value={{ name2 }} ><!--隐藏输入，记录上一步操作的网元名--><input type="hidden" name="name" value=1 >
+            <input type="submit" />
+    </form>>
+{% endif %}
+{% endblock %}

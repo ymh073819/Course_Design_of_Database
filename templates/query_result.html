@@ -1,0 +1,188 @@
+{% extends 'base1.html' %}
+{% load staticfiles %}
+
+{% block content_block %}
+    <div class="content">
+    <div class="container">
+        <div class="content-top">
+            {% if fina_list %}
+            <table width="200" border="1">
+
+  <caption>
+  </caption>
+  <tr>
+    <td>CITY</td>
+    <td>{{ fina_list.1 }}</td>
+  </tr>
+  <tr>
+    <td>SECTOR_ID</td>
+    <td>{{  fina_list.2}}</td>
+  </tr>
+  <tr>
+    <td>SECTOR_NAME</td>
+    <td>{{  fina_list.3}}</td>
+  </tr>
+  <tr>
+    <td>ENODEBID</td>
+    <td>{{ fina_list.4 }}</td>
+  </tr>
+  <tr>
+    <td>ENODEB_NAME</td>
+    <td>{{ fina_list.5 }}</td>
+  </tr>
+                <tr>
+    <td>EARFCN</td>
+    <td>{{ fina_list.6 }}</td>
+  </tr>
+                <tr>
+    <td>PCI</td>
+    <td>{{ fina_list.7 }}</td>
+  </tr>
+                <tr>
+    <td>PSS</td>
+    <td>{{  fina_list.8 }}</td>
+  </tr>
+                <tr>
+    <td>SSS</td>
+    <td>{{ fina_list.9}}</td>
+  </tr>
+                <tr>
+    <td>TAC</td>
+    <td>{{ fina_list.10 }}</td>
+  </tr>
+                <tr>
+    <td>VENDOR</td>
+    <td>{{ fina_list.11 }}</td>
+  </tr>
+                <tr>
+    <td>LONGITUDE</td>
+    <td>{{  fina_list.12}}</td>
+  </tr>
+                <tr>
+    <td>LATITUDE</td>
+    <td>{{  fina_list.13}}</td>
+  </tr>
+                <tr>
+    <td>STYLE</td>
+    <td>{{  fina_list.14}}</td>
+  </tr>
+                <tr>
+    <td>AZIMUTH</td>
+    <td>{{  fina_list.15}}</td>
+  </tr>
+                <tr>
+    <td>HEIGHT</td>
+    <td>{{ fina_list.16 }}</td>
+  </tr>
+                <tr>
+    <td>ELECTTILT</td>
+    <td>{{  fina_list.17}}</td>
+  </tr>
+                <tr>
+    <td>MECHTILT</td>
+    <td>{{  fina_list.18}}</td>
+  </tr>
+                <tr>
+    <td>TOTLETILT</td>
+    <td>{{fina_list.19  }}</td>
+  </tr>
+
+</table>
+            {%   endif %}
+
+            {% if list2 %}
+               {% for fina_list in list2 %}
+                <table width="200" border="1">
+
+  <caption>
+  </caption>
+  <tr>
+    <td>CITY</td>
+    <td>{{ fina_list.CITY }}</td>
+  </tr>
+  <tr>
+    <td>SECTOR_ID</td>
+    <td>{{  fina_list.SECTOR_ID}}</td>
+  </tr>
+  <tr>
+    <td>SECTOR_NAME</td>
+    <td>{{  fina_list.SECTOR_NAME}}</td>
+  </tr>
+  <tr>
+    <td>ENODEBID</td>
+    <td>{{ fina_list.ENODEBID }}</td>
+  </tr>
+  <tr>
+    <td>ENODEB_NAME</td>
+    <td>{{ fina_list.ENODEB_NAME }}</td>
+  </tr>
+                <tr>
+    <td>EARFCN</td>
+    <td>{{ fina_list.EARFCN }}</td>
+  </tr>
+                <tr>
+    <td>PCI</td>
+    <td>{{ fina_list.PCI }}</td>
+  </tr>
+                <tr>
+    <td>PSS</td>
+    <td>{{  fina_list.PSS }}</td>
+  </tr>
+                <tr>
+    <td>SSS</td>
+    <td>{{ fina_list.SSS }}</td>
+  </tr>
+                <tr>
+    <td>TAC</td>
+    <td>{{ fina_list.TAC }}</td>
+  </tr>
+                <tr>
+    <td>VENDOR</td>
+    <td>{{ fina_list.VENDOR }}</td>
+  </tr>
+                <tr>
+    <td>LONGITUDE</td>
+    <td>{{  fina_list.LONGITUDE}}</td>
+  </tr>
+                <tr>
+    <td>LATITUDE</td>
+    <td>{{  fina_list.LATITUDE}}</td>
+  </tr>
+                <tr>
+    <td>STYLE</td>
+    <td>{{  fina_list.STYLE}}</td>
+  </tr>
+                <tr>
+    <td>AZIMUTH</td>
+    <td>{{  fina_list.AZIMUTH}}</td>
+  </tr>
+                <tr>
+    <td>HEIGHT</td>
+    <td>{{ fina_list.HEIGHT }}</td>
+  </tr>
+                <tr>
+    <td>ELECTTILT</td>
+    <td>{{  fina_list.ELECTTILT}}</td>
+  </tr>
+                <tr>
+    <td>MECHTILT</td>
+    <td>{{  fina_list.MECHTILT}}</td>
+  </tr>
+                <tr>
+    <td>TOTLETILT</td>
+    <td>{{fina_list.TOTLETILT  }}</td>
+  </tr>
+
+</table>
+                {% endfor %}
+            {% endif %}
+            <div class="content-top1">
+
+            <div class="clearfix"> </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+{% endblock %}
